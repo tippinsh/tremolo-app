@@ -25,8 +25,8 @@ export default {
   background-color: whitesmoke;
   display: flex;
   align-items: center;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  box-shadow: 0 2px 2px rgb(0 0 0 / 0.2);
   cursor: pointer;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 </style>

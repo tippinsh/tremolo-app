@@ -4,7 +4,7 @@
   <div class="add-list-container">
     <button class="btn">
       <!-- <PlusSmallIcon class="plus-icon"></PlusSmallIcon> -->
-      <span id="add-a-list"> + Add a list</span>
+      <span id="add-a-list"> + Add another list</span>
     </button>
   </div>
 </template>
@@ -31,5 +31,6 @@
   padding: 6px;
   background-color: #ffffff3d;
   border: none;
+  border-radius: 5px;
 }
 </style>

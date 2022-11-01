@@ -25,6 +25,9 @@ export default {
       ],
       nextListId: 2,
       newListTitle: "Enter your list title",
+      boardTitle: "Board Title",
+      inputVisible: false,
+      titleVisible: false,
     };
   },
   methods: {
@@ -34,13 +37,26 @@ export default {
         title: this.newListTitle,
       });
     },
+    selectInput() {
+      this.inputVisible = !this.inputVisible;
+      this.titleVisible = !this.titleVisible;
+    },
   },
 };
 </script>
 
 <template>
   <the-header></the-header>
-  <h1>Board title</h1>
+  <h1 @click="selectInput" :class="{ disable: titleVisible }">
+    {{ boardTitle }}
+  </h1>
+  <input
+    type="text"
+    class="disable"
+    :class="{ title: inputVisible }"
+    @keydown.enter="selectInput"
+    v-model="boardTitle"
+  />
   <div class="board-container">
     <div class="list-container">
       <the-list v-for="list in listItems" :title="list.title"></the-list>
@@ -66,5 +82,20 @@ h1 {
   font-size: 22px;
   color: #fff;
   padding-left: 25px;
+  cursor: pointer;
+}
+
+.title {
+  display: inline;
+  padding: 5px;
+  margin: 10px 10px 10px 25px;
+  border: none;
+  font-size: 22px;
+  height: 20px;
+  background: none;
+  color: #fff;
+  border: none;
+  box-shadow: none;
+  outline: none;
 }
 </style>

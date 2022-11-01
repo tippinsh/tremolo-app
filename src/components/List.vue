@@ -1,15 +1,20 @@
 <script>
 import Card from "./Card.vue";
+import AddCard from "./AddCard.vue";
 
 export default {
   components: {
     "the-card": Card,
+    "add-card": AddCard,
   },
-  props: ["title"],
+  props: {
+    title: String,
+  },
   data() {
     return {
       inputVisible: false,
       titleVisible: false,
+      checkTitle: this.title,
     };
   },
   methods: {
@@ -18,6 +23,13 @@ export default {
       this.titleVisible = !this.titleVisible;
     },
   },
+  // watch: {
+  //   noTitleData() {
+  //     if (this.checkTitle.length === 0) {
+  //       return this.selectInput();
+  //     }
+  //   },
+  // },
 };
 </script>
 
@@ -32,6 +44,7 @@ export default {
       v-model="title"
     />
     <the-card></the-card>
+    <add-card></add-card>
   </div>
 </template>
 
@@ -52,6 +65,7 @@ h2 {
   font-size: 18px;
   padding-left: 14px;
   cursor: pointer;
+  height: 20px;
 }
 
 .disable {
@@ -64,5 +78,7 @@ h2 {
   margin: 10px;
   border: none;
   font-size: 18px;
+  height: 20px;
+  box-shadow: none;
 }
 </style>
