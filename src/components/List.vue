@@ -14,7 +14,6 @@ export default {
     return {
       inputVisible: false,
       titleVisible: false,
-      checkTitle: this.title,
       nextCardId: 2,
       cardItems: [
         {
@@ -56,7 +55,6 @@ export default {
 .list-box {
   min-height: 135px;
   width: 272px;
-  background-color: #f9f9f9;
   border-radius: 5px;
   line-height: 20px;
   position: relative;
@@ -67,9 +65,14 @@ export default {
 
 h2 {
   font-size: 18px;
-  padding-left: 14px;
+  padding: 5px;
   cursor: pointer;
   height: 20px;
+  background-color: white;
+  margin: 6px;
+  border-radius: 5px;
+  width: 252px;
+  background-color: cornsilk;
 }
 
 .disable {
@@ -79,10 +82,12 @@ h2 {
 .active {
   display: inline;
   padding: 5px;
-  margin: 10px;
+  margin: 6px;
   border: none;
   font-size: 18px;
   height: 20px;
   box-shadow: none;
+  border-radius: 5px;
+  width: 252px;
 }
 </style>

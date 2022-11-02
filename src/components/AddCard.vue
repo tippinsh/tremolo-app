@@ -12,7 +12,7 @@
 .container {
   display: flex;
   justify-content: center;
-  width: 210px;
+  width: 260px;
   margin-left: 8px;
 }
 
@@ -26,9 +26,10 @@
   padding: 4px 8px;
   border: none;
   outline: inherit;
+  background-color: #ffd7be;
 }
 
 .add-card:hover {
-  background-color: #ffd7be;
+  opacity: 0.8;
 }
 </style>

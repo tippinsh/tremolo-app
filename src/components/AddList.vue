@@ -12,9 +12,10 @@
 <style>
 .add-list-container {
   width: 271px;
-  height: 40px;
+  height: 30px;
   background-color: #ffffff3d;
   border-radius: 5px;
+  margin-top: 6px;
 }
 
 .add-list-container span {
@@ -27,7 +28,7 @@
   display: flex;
   align-items: center;
   width: 271px;
-  height: 40px;
+  height: 30px;
   padding: 6px;
   background-color: #ffffff3d;
   border: none;
