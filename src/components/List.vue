@@ -15,6 +15,12 @@ export default {
       inputVisible: false,
       titleVisible: false,
       checkTitle: this.title,
+      nextCardId: 2,
+      cardItems: [
+        {
+          id: 1,
+        },
+      ],
     };
   },
   methods: {
@@ -22,14 +28,12 @@ export default {
       this.inputVisible = !this.inputVisible;
       this.titleVisible = !this.titleVisible;
     },
+    addNewCard() {
+      this.cardItems.push({
+        id: this.nextCardId++,
+      });
+    },
   },
-  // watch: {
-  //   noTitleData() {
-  //     if (this.checkTitle.length === 0) {
-  //       return this.selectInput();
-  //     }
-  //   },
-  // },
 };
 </script>
 
@@ -43,14 +47,14 @@ export default {
       @keydown.enter="selectInput"
       v-model="title"
     />
-    <the-card></the-card>
-    <add-card></add-card>
+    <the-card v-for="cards in cardItems" :id="cards.id"></the-card>
+    <add-card @click="addNewCard"></add-card>
   </div>
 </template>
 
 <style>
 .list-box {
-  min-height: 118px;
+  min-height: 135px;
   width: 272px;
   background-color: #f9f9f9;
   border-radius: 5px;

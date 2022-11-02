@@ -1,15 +1,19 @@
 <script>
 export default {
-  props: ["content"],
+  props: ["id"],
   data() {
-    return {};
+    return {
+      message: "",
+      id: 1,
+    };
   },
 };
 </script>
 
 <template>
   <div class="card-container">
-    {{ content }}
+    <p>{{ message }}</p>
+    <textarea type="text" maxlength="255" rows="2" :value="message"></textarea>
   </div>
 </template>
 
@@ -27,6 +31,18 @@ export default {
   align-items: center;
   box-shadow: 0 2px 2px rgb(0 0 0 / 0.2);
   cursor: pointer;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+}
+
+textarea {
+  border: none;
+  background: inherit;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  overflow: auto;
+  resize: none;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
 }
 </style>

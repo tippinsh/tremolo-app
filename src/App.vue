@@ -2,12 +2,14 @@
 import TheHeader from "./components/Header.vue";
 import TheList from "./components/List.vue";
 import AddList from "./components/AddList.vue";
+import Card from "./components/Card.vue";
 
 export default {
   components: {
     "the-header": TheHeader,
     "the-list": TheList,
     "add-list": AddList,
+    "the-card": Card,
   },
   data() {
     return {
@@ -25,6 +27,8 @@ export default {
       ],
       nextListId: 2,
       newListTitle: "Enter your list title",
+      nextCardId: 2,
+      newCardContent: "Enter your content",
       boardTitle: "Board Title",
       inputVisible: false,
       titleVisible: false,
@@ -96,6 +100,5 @@ h1 {
   color: #fff;
   border: none;
   box-shadow: none;
-  outline: none;
 }
 </style>
