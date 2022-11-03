@@ -26,7 +26,7 @@
   padding: 4px 8px;
   border: none;
   outline: inherit;
-  background-color: #ffd7be;
+  background-color: white;
 }
 
 .add-card:hover {

@@ -5,15 +5,30 @@ export default {
     return {
       message: "",
       id: 1,
+      inputVisible: false,
+      textVisible: false,
     };
+  },
+  methods: {
+    selectInput() {
+      this.inputVisible = !this.inputVisible;
+      this.textVisible = !this.textVisible;
+    },
   },
 };
 </script>
 
 <template>
   <div class="card-container">
-    <p>{{ message }}</p>
-    <textarea type="text" maxlength="255" rows="2" :value="message"></textarea>
+    <p @click="selectInput" :class="{ disable: textVisible }">{{ message }}</p>
+    <textarea
+      class="disable"
+      type="text"
+      maxlength="255"
+      v-model="message"
+      @keydown.enter="selectInput"
+      :class="{ active: inputVisible }"
+    ></textarea>
   </div>
 </template>
 
@@ -34,15 +49,26 @@ export default {
   margin-bottom: 8px;
 }
 
+p {
+  width: 240px;
+  height: 100%;
+  font-size: 18px;
+}
+
 textarea {
   border: none;
   background: inherit;
   cursor: pointer;
   outline: none;
-  width: 100%;
+  width: 240px;
   overflow: auto;
   resize: none;
   height: 100%;
   font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+.disable {
+  display: none;
 }
 </style>

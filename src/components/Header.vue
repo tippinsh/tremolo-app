@@ -11,7 +11,7 @@
 <style>
 header {
   width: 100%;
-  background: #3f4c48;
+  background-color: var(--color-header);
   height: 50px;
   display: flex;
   justify-content: flex-start;

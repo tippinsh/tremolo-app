@@ -72,7 +72,7 @@ h2 {
   margin: 6px;
   border-radius: 5px;
   width: 252px;
-  background-color: cornsilk;
+  background-color: white;
 }
 
 .disable {
