@@ -16,6 +16,10 @@
   margin-left: 8px;
 }
 
+p {
+  font-size: 14px;
+}
+
 .add-card {
   display: flex;
   height: 20px;
@@ -26,7 +30,7 @@
   padding: 4px 8px;
   border: none;
   outline: inherit;
-  background-color: white;
+  background-color: #eeeeee;
 }
 
 .add-card:hover {

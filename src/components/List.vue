@@ -32,6 +32,9 @@ export default {
         id: this.nextCardId++,
       });
     },
+    removeCard(id) {
+      this.cardItems.splice(id);
+    },
   },
 };
 </script>
@@ -46,7 +49,7 @@ export default {
       @keydown.enter="selectInput"
       v-model="title"
     />
-    <the-card v-for="cards in cardItems" :id="cards.id"></the-card>
+    <the-card v-for="cards in cardItems" :key="cards.id"></the-card>
     <add-card @click="addNewCard"></add-card>
   </div>
 </template>
@@ -68,11 +71,10 @@ h2 {
   padding: 5px;
   cursor: pointer;
   height: 20px;
-  background-color: white;
+  background-color: #eeeeee;
   margin: 6px;
   border-radius: 5px;
   width: 252px;
-  background-color: white;
 }
 
 .disable {

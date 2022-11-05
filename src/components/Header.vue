@@ -1,10 +1,19 @@
-<script></script>
+<script>
+import { Cog8ToothIcon } from "@heroicons/vue/24/solid";
+
+export default {
+  components: {
+    "settings-icon": Cog8ToothIcon,
+  },
+};
+</script>
 
 <template>
   <header>
     <div id="logo">
       <img src="@/assets/logo_transparent.png" />
     </div>
+    <settings-icon class="settings-icon"></settings-icon>
   </header>
 </template>
 
@@ -14,7 +23,14 @@ header {
   background-color: var(--color-header);
   height: 50px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+}
+
+.settings-icon {
+  fill: white;
+  height: 20px;
+  padding: 15px;
+  cursor: pointer;
 }
 
 img {
@@ -26,12 +42,13 @@ img {
 #logo {
   width: 70px;
   height: 40px;
-  margin-left: 20px;
+  margin-left: 25px;
   display: flex;
   justify-content: center;
   margin-top: 5px;
   border-radius: 5px;
   cursor: pointer;
+  align-items: center;
 }
 
 #logo:hover {

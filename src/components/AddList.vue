@@ -3,7 +3,6 @@
 <template>
   <div class="add-list-container">
     <button class="btn">
-      <!-- <PlusSmallIcon class="plus-icon"></PlusSmallIcon> -->
       <span id="add-a-list"> + Add another list</span>
     </button>
   </div>

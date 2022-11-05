@@ -41,7 +41,7 @@ export default {
   border-radius: 3px;
   padding: 7px 10px 2px;
   position: relative;
-  background-color: whitesmoke;
+  background-color: #eeeeee;
   display: flex;
   align-items: center;
   box-shadow: 0 2px 2px rgb(0 0 0 / 0.2);
@@ -65,10 +65,5 @@ textarea {
   resize: none;
   height: 100%;
   font-family: "Roboto", sans-serif;
-  font-size: 14px;
-}
-
-.disable {
-  display: none;
 }
 </style>

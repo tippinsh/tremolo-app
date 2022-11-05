@@ -19,16 +19,8 @@ export default {
           title: "To Do",
         },
       ],
-      cardItems: [
-        {
-          cardId: 1,
-          content: "",
-        },
-      ],
       nextListId: 2,
       newListTitle: "Enter your list title",
-      nextCardId: 2,
-      newCardContent: "Enter your content",
       boardTitle: "Board Title",
       inputVisible: false,
       titleVisible: false,
@@ -63,7 +55,11 @@ export default {
   />
   <div class="board-container">
     <div class="list-container">
-      <the-list v-for="list in listItems" :title="list.title"></the-list>
+      <the-list
+        v-for="list in listItems"
+        :title="list.title"
+        :key="list.id"
+      ></the-list>
       <add-list @click="addNewList"></add-list>
     </div>
   </div>
@@ -84,8 +80,9 @@ export default {
 
 h1 {
   font-size: 22px;
-  color: #fff;
-  padding-left: 25px;
+  color: #eeeeee;
+  padding-left: 30px;
+  width: 150px;
   cursor: pointer;
 }
 
@@ -97,7 +94,7 @@ h1 {
   font-size: 22px;
   height: 20px;
   background: none;
-  color: #fff;
+  color: #eeeeee;
   border: none;
   box-shadow: none;
 }
