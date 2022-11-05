@@ -20,7 +20,13 @@ export default {
 
 <template>
   <div class="card-container">
-    <p @click="selectInput" :class="{ disable: textVisible }">{{ message }}</p>
+    <p
+      class="card-content"
+      @click="selectInput"
+      :class="{ disable: textVisible }"
+    >
+      {{ message }}
+    </p>
     <textarea
       class="disable"
       type="text"
@@ -49,7 +55,7 @@ export default {
   margin-bottom: 8px;
 }
 
-p {
+.card-content {
   width: 240px;
   height: 100%;
   font-size: 18px;

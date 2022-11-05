@@ -11,7 +11,7 @@ export default {
 <template>
   <header>
     <div id="logo">
-      <img src="@/assets/logo_transparent.png" />
+      <img class="img-logo" src="@/assets/logo_transparent.png" />
     </div>
     <settings-icon class="settings-icon"></settings-icon>
   </header>
@@ -33,7 +33,7 @@ header {
   cursor: pointer;
 }
 
-img {
+.img-logo {
   width: 90%;
   height: 90%;
   object-fit: contain;

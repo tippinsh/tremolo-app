@@ -3,6 +3,7 @@ import TheHeader from "./components/Header.vue";
 import TheList from "./components/List.vue";
 import AddList from "./components/AddList.vue";
 import Card from "./components/Card.vue";
+import SettingsModal from "./components/SettingsModal.vue";
 
 export default {
   components: {
@@ -10,6 +11,7 @@ export default {
     "the-list": TheList,
     "add-list": AddList,
     "the-card": Card,
+    "settings-modal": SettingsModal,
   },
   data() {
     return {
@@ -42,8 +44,13 @@ export default {
 </script>
 
 <template>
+  <settings-modal></settings-modal>
   <the-header></the-header>
-  <h1 @click="selectInput" :class="{ disable: titleVisible }">
+  <h1
+    class="board-title"
+    @click="selectInput"
+    :class="{ disable: titleVisible }"
+  >
     {{ boardTitle }}
   </h1>
   <input
@@ -53,6 +60,7 @@ export default {
     @keydown.enter="selectInput"
     v-model="boardTitle"
   />
+
   <div class="board-container">
     <div class="list-container">
       <the-list
@@ -78,7 +86,7 @@ export default {
   gap: 10px;
 }
 
-h1 {
+.board-title {
   font-size: 22px;
   color: #eeeeee;
   padding-left: 30px;

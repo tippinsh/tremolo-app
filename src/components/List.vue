@@ -41,7 +41,13 @@ export default {
 
 <template>
   <div class="list-box">
-    <h2 @click="selectInput" :class="{ disable: titleVisible }">{{ title }}</h2>
+    <h2
+      class="list-title"
+      @click="selectInput"
+      :class="{ disable: titleVisible }"
+    >
+      {{ title }}
+    </h2>
     <input
       type="text"
       class="disable"
@@ -66,7 +72,7 @@ export default {
   flex-direction: column;
 }
 
-h2 {
+.list-title {
   font-size: 18px;
   padding: 5px;
   cursor: pointer;

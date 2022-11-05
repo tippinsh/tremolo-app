@@ -3,7 +3,7 @@
 <template>
   <div class="container">
     <div class="add-card">
-      <p>+ Add a card</p>
+      <p class="add-card-text">+ Add a card</p>
     </div>
   </div>
 </template>
@@ -16,7 +16,7 @@
   margin-left: 8px;
 }
 
-p {
+.add-card-text {
   font-size: 14px;
 }
 
