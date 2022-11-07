@@ -94,6 +94,10 @@ export default {
   cursor: pointer;
 }
 
+.disable {
+  display: none;
+}
+
 .title {
   display: inline;
   padding: 5px;
