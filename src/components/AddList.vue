@@ -14,7 +14,6 @@
   height: 30px;
   background-color: rgba(214, 214, 214, 0.8);
   border-radius: 5px;
-  margin-top: 6px;
 }
 
 .add-list-container:hover {
@@ -22,7 +21,7 @@
 }
 
 .add-list-container span {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .btn {

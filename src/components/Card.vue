@@ -89,6 +89,7 @@ export default {
   border-radius: 3px;
   cursor: pointer;
   padding: 4px;
+  color: #6b778c;
 }
 
 .btn:hover {

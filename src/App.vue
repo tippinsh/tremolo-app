@@ -23,9 +23,10 @@ export default {
       ],
       nextListId: 2,
       newListTitle: "",
-      boardTitle: "",
+      boardTitle: "Board title",
       inputVisible: false,
       titleVisible: false,
+      showModal: false,
     };
   },
   methods: {
@@ -39,12 +40,16 @@ export default {
       this.inputVisible = !this.inputVisible;
       this.titleVisible = !this.titleVisible;
     },
+    triggerModal() {
+      showModal = true;
+      console.log(this.showModal);
+    },
   },
 };
 </script>
 
 <template>
-  <the-header></the-header>
+  <the-header @open-modal="showModal = true"></the-header>
   <h1
     class="board-title"
     @click="selectInput"
@@ -70,9 +75,17 @@ export default {
       <add-list @click="addNewList"></add-list>
     </div>
   </div>
+  <settings-modal
+    v-show="showModal"
+    @close-modal="showModal = false"
+  ></settings-modal>
 </template>
 
 <style>
+body {
+  background-color: var(--color-base);
+}
+
 .board-container {
   display: flex;
   margin-left: 20px;
@@ -89,6 +102,7 @@ export default {
   font-size: 22px;
   color: #eeeeee;
   padding-left: 30px;
+  margin-bottom: 20px;
   width: 256px;
   height: 25px;
   cursor: pointer;
@@ -102,7 +116,7 @@ export default {
 .title {
   display: inline;
   padding: 5px;
-  margin: 10px 10px 10px 25px;
+  margin: 10px 10px 15px 25px;
   border: none;
   font-size: 22px;
   height: 20px;

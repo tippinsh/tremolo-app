@@ -5,6 +5,11 @@ export default {
   components: {
     "settings-icon": Cog8ToothIcon,
   },
+  methods: {
+    openModal() {
+      this.$emit("open-modal");
+    },
+  },
 };
 </script>
 
@@ -13,11 +18,11 @@ export default {
     <div id="logo">
       <img class="img-logo" src="@/assets/logo_transparent.png" />
     </div>
-    <settings-icon class="settings-icon"></settings-icon>
+    <settings-icon class="settings-icon" @click="openModal()"></settings-icon>
   </header>
 </template>
 
-<style scoped>
+<style>
 header {
   width: 100%;
   background-color: var(--color-header);

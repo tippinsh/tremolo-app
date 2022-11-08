@@ -1,8 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto&family=Lobster");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 @import url("./base.css");
 
 body {
   margin: 0;
-  background-color: var(--color-base);
   font-family: "Roboto", sans-serif;
 }

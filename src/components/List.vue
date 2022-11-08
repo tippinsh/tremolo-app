@@ -111,7 +111,7 @@ export default {
   width: 256px;
   padding: 5px 5px 5px 0;
   align-items: center;
-  height: 20px;
+  height: 30px;
   background-color: #eeeeee;
   margin-left: 6px;
   margin-bottom: 3px;
@@ -121,8 +121,15 @@ export default {
 .menu-btn {
   width: 20px;
   height: 20px;
+  border-radius: 3px;
   padding: 4px;
   cursor: pointer;
+  color: #6b778c;
+  margin-top: 4px;
+}
+
+.menu-btn:hover {
+  background-color: rgba(214, 214, 214, 0.8);
 }
 
 .list-title {
