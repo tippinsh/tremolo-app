@@ -1,9 +1,8 @@
 <script>
 export default {
-  props: ["message"],
+  props: ["message", "id"],
   data() {
     return {
-      message: "",
       inputVisible: false,
       textVisible: false,
     };
@@ -12,6 +11,9 @@ export default {
     selectInput() {
       this.inputVisible = !this.inputVisible;
       this.textVisible = !this.textVisible;
+    },
+    deleteCard() {
+      this.$emit("delete-card", this.id);
     },
   },
 };
@@ -36,7 +38,7 @@ export default {
         :class="{ active: inputVisible }"
       ></textarea>
     </div>
-    <div class="delete-btn">
+    <div class="delete-btn" @click="deleteCard()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -95,7 +97,7 @@ export default {
 
 .card-content {
   width: 252px;
-  height: 48px;
+  height: 40px;
   font-size: 16px;
   margin: 0;
 }
@@ -116,7 +118,7 @@ textarea {
   display: inline;
   border: none;
   font-size: 16px;
-  height: 39px;
+  height: 31px;
   box-shadow: none;
   border-radius: 5px;
   width: 252px;

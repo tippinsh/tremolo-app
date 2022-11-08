@@ -35,8 +35,12 @@ export default {
         message: this.newMessage,
       });
     },
-    removeCard(id) {
-      this.cardItems.splice(id);
+    removeCard(cardID) {
+      const identifiedCard = this.cardItems.findIndex(
+        (cards) => cards.id === cardID
+      );
+      this.cardItems.splice(identifiedCard, 1);
+      console.log(identifiedCard);
     },
   },
 };
@@ -62,6 +66,8 @@ export default {
       v-for="cards in cardItems"
       :key="cards.id"
       :message="cards.message"
+      :id="cards.id"
+      @delete-card="removeCard"
     ></the-card>
     <add-card @click="addNewCard"></add-card>
   </div>
