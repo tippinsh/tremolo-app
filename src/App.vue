@@ -90,7 +90,9 @@ export default {
   color: #eeeeee;
   padding-left: 30px;
   width: 150px;
+  height: 25px;
   cursor: pointer;
+  background-color: inherit;
 }
 
 .disable {
