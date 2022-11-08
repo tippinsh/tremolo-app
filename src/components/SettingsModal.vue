@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .settings-container {
   height: 400px;
   width: 400px;

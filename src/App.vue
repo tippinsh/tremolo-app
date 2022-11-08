@@ -44,7 +44,6 @@ export default {
 </script>
 
 <template>
-  <settings-modal></settings-modal>
   <the-header></the-header>
   <h1
     class="board-title"

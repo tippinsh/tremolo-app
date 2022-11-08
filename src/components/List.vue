@@ -60,7 +60,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 .list-box {
   min-height: 135px;
   width: 272px;

@@ -38,27 +38,26 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 .card-container {
-  min-height: 20px;
-  width: 240px;
-  margin-left: 7px;
-  margin-right: 10px;
+  min-height: 30px;
+  width: 252px;
+  margin: 4px 6px 4px 6px;
   border-radius: 3px;
-  padding: 7px 10px 2px;
-  position: relative;
+  padding: 5px;
   background-color: #eeeeee;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   box-shadow: 0 2px 2px rgb(0 0 0 / 0.2);
   cursor: pointer;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
 }
 
 .card-content {
-  width: 240px;
-  height: 100%;
-  font-size: 18px;
+  width: 252px;
+  height: 54px;
+  font-size: 16px;
+  margin: 0;
 }
 
 textarea {
@@ -66,10 +65,20 @@ textarea {
   background: inherit;
   cursor: pointer;
   outline: none;
-  width: 240px;
+  width: 252px;
   overflow: auto;
   resize: none;
-  height: 100%;
   font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+.active {
+  display: inline;
+  border: none;
+  font-size: 16px;
+  height: 50px;
+  box-shadow: none;
+  border-radius: 5px;
+  width: 252px;
 }
 </style>

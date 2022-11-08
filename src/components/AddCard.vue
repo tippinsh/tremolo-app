@@ -12,8 +12,8 @@
 .container {
   display: flex;
   justify-content: center;
-  width: 260px;
-  margin-left: 8px;
+  width: 262px;
+  padding: 5px;
 }
 
 .add-card-text {
@@ -23,11 +23,11 @@
 .add-card {
   display: flex;
   height: 20px;
-  width: 100%;
+  width: 252px;
   border-radius: 3px;
   cursor: pointer;
   align-items: center;
-  padding: 4px 8px;
+  padding: 6px;
   border: none;
   outline: inherit;
   background-color: #eeeeee;

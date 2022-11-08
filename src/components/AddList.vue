@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .add-list-container {
   width: 271px;
   height: 30px;
