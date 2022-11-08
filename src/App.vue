@@ -125,4 +125,8 @@ body {
   border: none;
   box-shadow: none;
 }
+
+input:focus {
+  outline: none;
+}
 </style>
