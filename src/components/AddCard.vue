@@ -30,7 +30,7 @@
   padding: 6px;
   border: none;
   outline: inherit;
-  background-color: #eeeeee;
+  background-color: rgba(214, 214, 214, 0.8);
 }
 
 .add-card:hover {

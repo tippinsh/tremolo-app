@@ -12,9 +12,13 @@
 .add-list-container {
   width: 271px;
   height: 30px;
-  background-color: #ffffff3d;
+  background-color: rgba(214, 214, 214, 0.8);
   border-radius: 5px;
   margin-top: 6px;
+}
+
+.add-list-container:hover {
+  opacity: 0.8;
 }
 
 .add-list-container span {

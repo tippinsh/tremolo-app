@@ -14,12 +14,14 @@ export default {
     return {
       inputVisible: false,
       titleVisible: false,
-      nextCardId: 2,
       cardItems: [
         {
           id: 1,
+          message: "",
         },
       ],
+      nextCardId: 2,
+      newMessage: "",
     };
   },
   methods: {
@@ -30,6 +32,7 @@ export default {
     addNewCard() {
       this.cardItems.push({
         id: this.nextCardId++,
+        message: this.newMessage,
       });
     },
     removeCard(id) {
@@ -55,7 +58,11 @@ export default {
       @keydown.enter="selectInput"
       v-model="title"
     />
-    <the-card v-for="cards in cardItems" :key="cards.id"></the-card>
+    <the-card
+      v-for="cards in cardItems"
+      :key="cards.id"
+      :message="cards.message"
+    ></the-card>
     <add-card @click="addNewCard"></add-card>
   </div>
 </template>

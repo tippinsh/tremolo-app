@@ -17,13 +17,13 @@ export default {
     return {
       listItems: [
         {
-          ListId: 1,
+          id: 1,
           title: "To Do",
         },
       ],
       nextListId: 2,
-      newListTitle: "Enter your list title",
-      boardTitle: "Board Title",
+      newListTitle: "",
+      boardTitle: "",
       inputVisible: false,
       titleVisible: false,
     };
@@ -89,7 +89,7 @@ export default {
   font-size: 22px;
   color: #eeeeee;
   padding-left: 30px;
-  width: 150px;
+  width: 256px;
   height: 25px;
   cursor: pointer;
   background-color: inherit;
