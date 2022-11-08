@@ -12,7 +12,7 @@
 .container {
   display: flex;
   justify-content: center;
-  width: 262px;
+  width: 264px;
   padding: 5px;
 }
 

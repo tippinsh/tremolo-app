@@ -48,20 +48,40 @@ export default {
 
 <template>
   <div class="list-box">
-    <h2
-      class="list-title"
-      @click="selectInput"
-      :class="{ disable: titleVisible }"
-    >
-      {{ title }}
-    </h2>
-    <input
-      type="text"
-      class="disable"
-      :class="{ active: inputVisible }"
-      @keydown.enter="selectInput"
-      v-model="title"
-    />
+    <div class="title-contents">
+      <div>
+        <h2
+          class="list-title"
+          @click="selectInput"
+          :class="{ disable: titleVisible }"
+        >
+          {{ title }}
+        </h2>
+        <input
+          type="text"
+          class="disable"
+          :class="{ active: inputVisible }"
+          @keydown.enter="selectInput"
+          v-model="title"
+        />
+      </div>
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="menu-btn"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+          />
+        </svg>
+      </div>
+    </div>
     <the-card
       v-for="cards in cardItems"
       :key="cards.id"
@@ -85,15 +105,33 @@ export default {
   flex-direction: column;
 }
 
+.title-contents {
+  display: flex;
+  justify-content: space-between;
+  width: 256px;
+  padding: 5px 5px 5px 0;
+  align-items: center;
+  height: 20px;
+  background-color: #eeeeee;
+  margin-left: 6px;
+  margin-bottom: 3px;
+  border-radius: 3px;
+}
+
+.menu-btn {
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  cursor: pointer;
+}
+
 .list-title {
   font-size: 18px;
   padding: 5px;
   cursor: pointer;
   height: 20px;
-  background-color: #eeeeee;
-  margin: 6px;
   border-radius: 5px;
-  width: 252px;
+  width: 150px;
 }
 
 .disable {
@@ -103,12 +141,12 @@ export default {
 .active {
   display: inline;
   padding: 5px;
-  margin: 6px;
+  /* margin: 6px; */
   border: none;
   font-size: 18px;
   height: 20px;
   box-shadow: none;
   border-radius: 5px;
-  width: 252px;
+  width: 150px;
 }
 </style>
