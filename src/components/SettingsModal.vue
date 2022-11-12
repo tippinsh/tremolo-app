@@ -1,8 +1,22 @@
 <script>
 export default {
+  props: ["lb", "orange", "purple"],
+  emits: ["toggle-theme"],
   methods: {
     closeModal() {
       this.$emit("close-modal");
+    },
+    base() {
+      this.$emit("base");
+    },
+    lightBlueTheme() {
+      this.$emit("light-blue-theme");
+    },
+    orangeTheme() {
+      this.$emit("orange-theme");
+    },
+    purpleTheme() {
+      this.$emit("purple-theme");
     },
   },
 };
@@ -11,17 +25,21 @@ export default {
 <template>
   <div class="modal-overlay" @click="$emit('close-modal')">
     <div class="modal" @click.stop>
-      <h2>Change board colours</h2>
+      <h2>Change board theme</h2>
       <div class="container">
-        <div class="board-box">
+        <div class="board-box" @click="$emit('base')">
+          <div class="header-base"></div>
+          <div class="body-base"></div>
+        </div>
+        <div class="board-box" @click="$emit('light-blue-theme')">
           <div class="header-1"></div>
           <div class="body-1"></div>
         </div>
-        <div class="board-box">
+        <div class="board-box" @click="$emit('orange-theme')">
           <div class="header-2"></div>
           <div class="body-2"></div>
         </div>
-        <div class="board-box">
+        <div class="board-box" @click="$emit('purple-theme')">
           <div class="header-3"></div>
           <div class="body-3"></div>
         </div>
@@ -81,6 +99,8 @@ export default {
 
 .container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .board-box {
@@ -93,31 +113,41 @@ export default {
 .header-1 {
   width: 100%;
   height: 20%;
-  background-color: #084887;
+  background-color: var(--color-lb-header);
 }
 .body-1 {
   width: 100%;
   height: 80%;
-  background-color: #909cc2;
+  background-color: var(--color-lb-body);
 }
 .header-2 {
   width: 100%;
   height: 20%;
-  background-color: #f58a07;
+  background-color: var(--color-orange-header);
 }
 .body-2 {
   width: 100%;
   height: 80%;
-  background-color: #f9ab55;
+  background-color: var(--color-orange-body);
 }
 .header-3 {
   width: 100%;
   height: 20%;
-  background-color: #6457a6;
+  background-color: var(--color-purple-header);
 }
 .body-3 {
   width: 100%;
   height: 80%;
-  background-color: #9dacff;
+  background-color: var(--color-purple-body);
+}
+.header-base {
+  width: 100%;
+  height: 20%;
+  background-color: var(--color-header);
+}
+.body-base {
+  width: 100%;
+  height: 80%;
+  background-color: var(--color-base);
 }
 </style>

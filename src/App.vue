@@ -27,6 +27,9 @@ export default {
       inputVisible: false,
       titleVisible: false,
       showModal: false,
+      lightBlue: false,
+      purple: false,
+      orange: false,
     };
   },
   methods: {
@@ -43,46 +46,95 @@ export default {
     triggerModal() {
       showModal = true;
     },
+    checkColour(colour) {
+      if (colour === 1) {
+        this.lightBlue = true;
+        this.purple = false;
+        this.orange = false;
+        this.showModal = false;
+      } else if (colour === 2) {
+        this.orange = true;
+        this.lightBlue = false;
+        this.purple = false;
+        this.showModal = false;
+      } else if (colour === 3) {
+        this.purple = true;
+        this.lightBlue = false;
+        this.orange = false;
+        this.showModal = false;
+      } else if (colour === 4) {
+        this.purple = false;
+        this.lightBlue = false;
+        this.orange = false;
+        this.showModal = false;
+      }
+    },
   },
 };
 </script>
 
 <template>
   <the-header @open-modal="showModal = true"></the-header>
-  <h1
-    class="board-title"
-    @click="selectInput"
-    :class="{ disable: titleVisible }"
+  <section
+    class="board"
+    :class="{ lb: lightBlue, orange: orange, purple: purple }"
   >
-    {{ boardTitle }}
-  </h1>
-  <input
-    type="text"
-    class="disable"
-    :class="{ title: inputVisible }"
-    @keydown.enter="selectInput"
-    v-model="boardTitle"
-  />
+    <h1
+      class="board-title"
+      @click="selectInput"
+      :class="{ disable: titleVisible }"
+    >
+      {{ boardTitle }}
+    </h1>
+    <input
+      type="text"
+      class="disable"
+      :class="{ title: inputVisible }"
+      @keydown.enter="selectInput"
+      v-model="boardTitle"
+    />
 
-  <div class="board-container">
-    <div class="list-container">
-      <the-list
-        v-for="list in listItems"
-        :title="list.title"
-        :key="list.id"
-      ></the-list>
-      <add-list @click="addNewList"></add-list>
+    <div class="board-container">
+      <div class="list-container">
+        <the-list
+          v-for="list in listItems"
+          :title="list.title"
+          :key="list.id"
+        ></the-list>
+        <add-list @click="addNewList"></add-list>
+      </div>
     </div>
-  </div>
+  </section>
   <settings-modal
     v-show="showModal"
     @close-modal="showModal = false"
+    @light-blue-theme="checkColour(1)"
+    @orange-theme="checkColour(2)"
+    @purple-theme="checkColour(3)"
+    @base="checkColour(4)"
   ></settings-modal>
 </template>
 
 <style>
-body {
+.board {
   background-color: var(--color-base);
+  position: fixed;
+  top: 5.5%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.lb {
+  background-color: var(--color-lb-body);
+}
+
+.orange {
+  background-color: var(--color-orange-body);
+}
+
+.purple {
+  background-color: var(--color-purple-body);
 }
 
 .board-container {

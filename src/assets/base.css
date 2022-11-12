@@ -3,5 +3,12 @@
   --color-header: #013a63;
   --color-modal: grey;
 
-  /* https://coolors.co/palette/012a4a-013a63-01497c-014f86-2a6f97-2c7da0-468faf-61a5c2-89c2d9-a9d6e5 */
+  --color-lb-header: #084887;
+  --color-lb-body: #909cc2;
+
+  --color-orange-header: #f58a07;
+  --color-orange-body: #f9ab55;
+
+  --color-purple-header: #6457a6;
+  --color-purple-body: #9dacff;
 }

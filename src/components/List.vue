@@ -127,10 +127,6 @@ export default {
   margin-top: 4px;
 }
 
-.menu-btn:hover {
-  background-color: rgba(214, 214, 214, 0.8);
-}
-
 .list-title {
   font-size: 18px;
   padding: 5px;
@@ -147,7 +143,6 @@ export default {
 .active {
   display: inline;
   padding: 5px;
-  /* margin: 6px; */
   border: none;
   font-size: 18px;
   height: 20px;
