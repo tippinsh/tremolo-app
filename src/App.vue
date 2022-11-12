@@ -116,13 +116,16 @@ export default {
 </template>
 
 <style>
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
 .board {
   background-color: var(--color-base);
-  position: fixed;
-  top: 5.5%;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: absolute;
+  min-height: 100%;
+  width: 100%;
 }
 
 .lb {

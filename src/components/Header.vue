@@ -25,10 +25,7 @@ export default {
 </script>
 
 <template>
-  <header
-    class="base"
-    :class="{ lb: lightBlue, orange: orange, purple: purple }"
-  >
+  <header class="base">
     <settings-modal v-show="modal"></settings-modal>
     <div id="logo">
       <img class="img-logo" src="@/assets/logo_transparent.png" />
@@ -41,7 +38,7 @@ export default {
 .base {
   width: 100%;
   background-color: var(--color-header);
-  height: 50px;
+  height: 5%;
   display: flex;
   justify-content: space-between;
 }
