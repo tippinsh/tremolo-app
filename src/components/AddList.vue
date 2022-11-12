@@ -1,22 +1,22 @@
 <script></script>
 
 <template>
-  <div class="add-list-container">
-    <button class="btn">
-      <span id="add-a-list"> + Add another list</span>
-    </button>
-  </div>
+  <!-- <div class="add-list-container"> -->
+  <button class="btn">
+    <span id="add-a-list"> + Add another list</span>
+  </button>
+  <!-- </div> -->
 </template>
 
 <style scoped>
 .add-list-container {
-  width: 271px;
+  width: 262px;
   height: 30px;
   background-color: rgba(214, 214, 214, 0.8);
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
-.add-list-container:hover {
+.btn:hover {
   opacity: 0.8;
 }
 
@@ -29,11 +29,13 @@
   text-align: center;
   display: flex;
   align-items: center;
-  width: 271px;
+  font-size: 14px;
+  width: 262px;
   height: 30px;
   padding: 6px;
-  background-color: #ffffff3d;
+  margin-left: 6px;
+  background-color: rgba(214, 214, 214, 0.8);
   border: none;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 </style>

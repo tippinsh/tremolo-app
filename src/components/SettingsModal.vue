@@ -11,8 +11,21 @@ export default {
 <template>
   <div class="modal-overlay" @click="$emit('close-modal')">
     <div class="modal" @click.stop>
-      <h2>Change background colour</h2>
-      <div>Insert colours here</div>
+      <h2>Change board colours</h2>
+      <div class="container">
+        <div class="board-box">
+          <div class="header-1"></div>
+          <div class="body-1"></div>
+        </div>
+        <div class="board-box">
+          <div class="header-2"></div>
+          <div class="body-2"></div>
+        </div>
+        <div class="board-box">
+          <div class="header-3"></div>
+          <div class="body-3"></div>
+        </div>
+      </div>
     </div>
     <div class="close" @click="$emit('close-modal')">
       <svg
@@ -64,5 +77,47 @@ export default {
   margin-top: 10%;
   padding: 60px 0;
   border-radius: 20px;
+}
+
+.container {
+  display: flex;
+}
+
+.board-box {
+  width: 150px;
+  height: 100px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.header-1 {
+  width: 100%;
+  height: 20%;
+  background-color: #084887;
+}
+.body-1 {
+  width: 100%;
+  height: 80%;
+  background-color: #909cc2;
+}
+.header-2 {
+  width: 100%;
+  height: 20%;
+  background-color: #f58a07;
+}
+.body-2 {
+  width: 100%;
+  height: 80%;
+  background-color: #f9ab55;
+}
+.header-3 {
+  width: 100%;
+  height: 20%;
+  background-color: #6457a6;
+}
+.body-3 {
+  width: 100%;
+  height: 80%;
+  background-color: #9dacff;
 }
 </style>

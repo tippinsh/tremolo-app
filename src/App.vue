@@ -42,7 +42,6 @@ export default {
     },
     triggerModal() {
       showModal = true;
-      console.log(this.showModal);
     },
   },
 };
@@ -89,6 +88,7 @@ body {
 .board-container {
   display: flex;
   margin-left: 20px;
+  max-width: 100%;
 }
 
 .list-container {
@@ -96,6 +96,8 @@ body {
   height: 100%;
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
+  justify-items: center;
 }
 
 .board-title {

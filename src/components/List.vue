@@ -40,7 +40,6 @@ export default {
         (cards) => cards.id === cardID
       );
       this.cardItems.splice(identifiedCard, 1);
-      console.log(identifiedCard);
     },
   },
 };
