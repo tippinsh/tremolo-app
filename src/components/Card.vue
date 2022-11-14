@@ -64,11 +64,15 @@ export default {
   margin: 4px 6px 4px 6px;
   border-radius: 3px;
   padding: 5px 5px 2px 5px;
-  background-color: #eeeeee;
+  background-color: #f4f3ee;
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  box-shadow: 0 2px 2px rgb(0 0 0 / 0.2);
+  box-shadow: 1px 3px 3px rgb(0 0 0 / 0.4);
+}
+
+.card-container:hover {
+  background-color: rgba(244, 243, 238, 0.6);
 }
 
 .inner-card {
@@ -112,7 +116,6 @@ textarea {
   overflow: auto;
   resize: none;
   font-family: "Roboto", sans-serif;
-  margin: 0;
 }
 
 .active {

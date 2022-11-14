@@ -34,7 +34,7 @@
   height: 30px;
   padding: 6px;
   margin-left: 6px;
-  background-color: rgba(214, 214, 214, 0.8);
+  background-color: rgba(214, 214, 214, 0.4);
   border: none;
   border-radius: 3px;
 }

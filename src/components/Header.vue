@@ -28,19 +28,32 @@ export default {
   <header class="base">
     <settings-modal v-show="modal"></settings-modal>
     <div id="logo">
-      <img class="img-logo" src="@/assets/logo_transparent.png" />
+      <!-- <img class="img-logo" src="@/assets/logo_transparent.png" /> -->
+      <i class="fa-brands fa-trello fa-lg"></i>
+      <p>Tremolo</p>
     </div>
     <settings-icon class="settings-icon" @click="openModal()"></settings-icon>
   </header>
 </template>
 
-<style>
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
 .base {
   width: 100%;
   background-color: var(--color-header);
   height: 5%;
   display: flex;
   justify-content: space-between;
+}
+
+.fa-trello {
+  color: white;
+  padding: 8px;
+}
+
+p {
+  font-family: "Chewy", cursive;
+  color: white;
 }
 
 .lb {
@@ -78,9 +91,5 @@ export default {
   border-radius: 5px;
   cursor: pointer;
   align-items: center;
-}
-
-#logo:hover {
-  background-color: hsla(0, 0%, 100%, 0.3);
 }
 </style>

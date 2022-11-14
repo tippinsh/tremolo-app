@@ -1,14 +1,9 @@
 :root {
-  --color-base: #2a6f97;
-  --color-header: #013a63;
+  --color-base: #f0ead2;
+  --color-header: #e26d5c;
   --color-modal: grey;
 
-  --color-lb-header: #084887;
-  --color-lb-body: #909cc2;
-
-  --color-orange-header: #f58a07;
-  --color-orange-body: #f9ab55;
-
-  --color-purple-header: #6457a6;
-  --color-purple-body: #9dacff;
+  --color-themeOne-body: #dceed1;
+  --color-themeTwo-body: #ece2d0;
+  --color-themeThree-body: #f2f6d0;
 }

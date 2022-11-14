@@ -111,10 +111,11 @@ export default {
   padding: 5px 5px 5px 0;
   align-items: center;
   height: 30px;
-  background-color: #eeeeee;
+  background-color: #f4f3ee;
   margin-left: 6px;
   margin-bottom: 3px;
   border-radius: 3px;
+  box-shadow: 1px 3px 3px rgb(0 0 0 / 0.4);
 }
 
 .menu-btn {
@@ -149,5 +150,6 @@ export default {
   box-shadow: none;
   border-radius: 5px;
   width: 150px;
+  margin: 3px;
 }
 </style>

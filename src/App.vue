@@ -27,9 +27,9 @@ export default {
       inputVisible: false,
       titleVisible: false,
       showModal: false,
-      lightBlue: false,
-      purple: false,
-      orange: false,
+      themeOne: false,
+      themeTwo: false,
+      themeThree: false,
     };
   },
   methods: {
@@ -48,24 +48,24 @@ export default {
     },
     checkColour(colour) {
       if (colour === 1) {
-        this.lightBlue = true;
-        this.purple = false;
-        this.orange = false;
+        this.themeOne = true;
+        this.themeTwo = false;
+        this.themeThree = false;
         this.showModal = false;
       } else if (colour === 2) {
-        this.orange = true;
-        this.lightBlue = false;
-        this.purple = false;
+        this.themeThree = true;
+        this.themeOne = false;
+        this.themeTwo = false;
         this.showModal = false;
       } else if (colour === 3) {
-        this.purple = true;
-        this.lightBlue = false;
-        this.orange = false;
+        this.themeTwo = true;
+        this.themeOne = false;
+        this.themeThree = false;
         this.showModal = false;
       } else if (colour === 4) {
-        this.purple = false;
-        this.lightBlue = false;
-        this.orange = false;
+        this.themeTwo = false;
+        this.themeOne = false;
+        this.themeThree = false;
         this.showModal = false;
       }
     },
@@ -74,10 +74,13 @@ export default {
 </script>
 
 <template>
-  <the-header @open-modal="showModal = true"></the-header>
+  <the-header
+    @open-modal="showModal = true"
+    :class="{ toggle: changeHeader }"
+  ></the-header>
   <section
     class="board"
-    :class="{ lb: lightBlue, orange: orange, purple: purple }"
+    :class="{ theme1: themeOne, theme2: themeThree, theme3: themeTwo }"
   >
     <h1
       class="board-title"
@@ -108,10 +111,7 @@ export default {
   <settings-modal
     v-show="showModal"
     @close-modal="showModal = false"
-    @light-blue-theme="checkColour(1)"
-    @orange-theme="checkColour(2)"
-    @purple-theme="checkColour(3)"
-    @base="checkColour(4)"
+    @toggle-theme="checkColour($event)"
   ></settings-modal>
 </template>
 
@@ -128,16 +128,16 @@ body {
   width: 100%;
 }
 
-.lb {
-  background-color: var(--color-lb-body);
+.theme1 {
+  background-color: var(--color-themeOne-body);
 }
 
-.orange {
-  background-color: var(--color-orange-body);
+.theme2 {
+  background-color: var(--color-themeThree-body);
 }
 
-.purple {
-  background-color: var(--color-purple-body);
+.theme3 {
+  background-color: var(--color-themeTwo-body);
 }
 
 .board-container {
@@ -157,13 +157,14 @@ body {
 
 .board-title {
   font-size: 22px;
-  color: #eeeeee;
+  color: #e26d5c;
   padding-left: 30px;
   margin-bottom: 20px;
   width: 256px;
   height: 25px;
   cursor: pointer;
   background-color: inherit;
+  font-family: "Rubik", sans-serif;
 }
 
 .disable {
@@ -174,13 +175,13 @@ body {
   display: inline;
   padding: 5px;
   margin: 10px 10px 15px 25px;
+  border-radius: 3px;
   border: none;
   font-size: 22px;
   height: 20px;
-  background: none;
-  color: #eeeeee;
-  border: none;
+  color: #e26d5c;
   box-shadow: none;
+  font-family: "Rubik", sans-serif;
 }
 
 input:focus {
