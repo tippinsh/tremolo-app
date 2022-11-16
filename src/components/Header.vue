@@ -28,7 +28,6 @@ export default {
   <header class="base">
     <settings-modal v-show="modal"></settings-modal>
     <div id="logo">
-      <!-- <img class="img-logo" src="@/assets/logo_transparent.png" /> -->
       <i class="fa-brands fa-trello fa-lg"></i>
       <p>Tremolo</p>
     </div>
