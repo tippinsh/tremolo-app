@@ -27,9 +27,8 @@ export default {
       inputVisible: false,
       titleVisible: false,
       showModal: false,
-      themeOne: false,
-      themeTwo: false,
-      themeThree: false,
+      themes: ["theme1", "theme2", "theme3"],
+      themeIndex: -1,
     };
   },
   methods: {
@@ -47,41 +46,15 @@ export default {
       showModal = true;
     },
     checkColour(colour) {
-      if (colour === 1) {
-        this.themeOne = true;
-        this.themeTwo = false;
-        this.themeThree = false;
-        this.showModal = false;
-      } else if (colour === 2) {
-        this.themeThree = true;
-        this.themeOne = false;
-        this.themeTwo = false;
-        this.showModal = false;
-      } else if (colour === 3) {
-        this.themeTwo = true;
-        this.themeOne = false;
-        this.themeThree = false;
-        this.showModal = false;
-      } else if (colour === 4) {
-        this.themeTwo = false;
-        this.themeOne = false;
-        this.themeThree = false;
-        this.showModal = false;
-      }
+      this.themeIndex = colour < 4 ? colour - 1 : -1;
     },
   },
 };
 </script>
 
 <template>
-  <the-header
-    @open-modal="showModal = true"
-    :class="{ toggle: changeHeader }"
-  ></the-header>
-  <section
-    class="board"
-    :class="{ theme1: themeOne, theme2: themeThree, theme3: themeTwo }"
-  >
+  <the-header @open-modal="showModal = true"></the-header>
+  <section class="board" :class="themeIndex != -1 ? themes[themeIndex] : ''">
     <h1
       class="board-title"
       @click="selectInput"
