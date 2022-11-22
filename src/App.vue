@@ -115,6 +115,7 @@ body {
 
 .board-container {
   display: flex;
+  flex-direction: column;
   margin-left: 20px;
   max-width: 100%;
 }
