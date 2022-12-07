@@ -1,6 +1,8 @@
 <script>
 export default {
-  props: ["message", "id"],
+  props: {
+    card: Object,
+  },
   data() {
     return {
       inputVisible: false,
@@ -27,7 +29,7 @@ export default {
         @click="selectInput"
         :class="{ disable: textVisible }"
       >
-        {{ message }}
+        {{ card.content }}
       </p>
       <textarea
         class="disable"

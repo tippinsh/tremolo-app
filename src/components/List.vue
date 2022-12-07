@@ -1,6 +1,7 @@
 <script>
 import Card from "./Card.vue";
 import AddCard from "./AddCard.vue";
+import axios from "axios";
 
 export default {
   components: {
@@ -8,19 +9,18 @@ export default {
     "add-card": AddCard,
   },
   props: {
+    list: Object,
     title: String,
+  },
+  mounted() {
+    this.loadCardsFromApi();
   },
   data() {
     return {
       inputVisible: false,
       titleVisible: false,
-      cardItems: [
-        {
-          id: 1,
-          message: "",
-        },
-      ],
-      nextCardId: 2,
+      cards: [],
+      baseURL: "http://localhost/api",
       newMessage: "",
     };
   },
@@ -40,6 +40,11 @@ export default {
         (cards) => cards.id === cardID
       );
       this.cardItems.splice(identifiedCard, 1);
+    },
+    loadCardsFromApi() {
+      axios.get(`${this.baseURL}/cards`).then((response) => {
+        this.cards = response.data;
+      });
     },
   },
 };
@@ -82,10 +87,9 @@ export default {
       </div>
     </div>
     <the-card
-      v-for="cards in cardItems"
+      v-for="cards in list.card"
+      :card="cards"
       :key="cards.id"
-      :message="cards.message"
-      :id="cards.id"
       @delete-card="removeCard"
     ></the-card>
     <add-card @click="addNewCard"></add-card>
