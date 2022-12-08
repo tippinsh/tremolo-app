@@ -35,7 +35,7 @@ export default {
         class="disable"
         type="text"
         maxlength="255"
-        v-model="message"
+        v-model="card.content"
         @keydown.enter="selectInput"
         :class="{ active: inputVisible }"
       ></textarea>

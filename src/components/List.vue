@@ -10,16 +10,11 @@ export default {
   },
   props: {
     list: Object,
-    title: String,
-  },
-  mounted() {
-    this.loadCardsFromApi();
   },
   data() {
     return {
       inputVisible: false,
       titleVisible: false,
-      cards: [],
       baseURL: "http://localhost/api",
       newMessage: "",
     };
@@ -41,11 +36,6 @@ export default {
       );
       this.cardItems.splice(identifiedCard, 1);
     },
-    loadCardsFromApi() {
-      axios.get(`${this.baseURL}/cards`).then((response) => {
-        this.cards = response.data;
-      });
-    },
   },
 };
 </script>
@@ -59,14 +49,14 @@ export default {
           @click="selectInput"
           :class="{ disable: titleVisible }"
         >
-          {{ title }}
+          {{ list.name }}
         </h2>
         <input
           type="text"
           class="disable"
           :class="{ active: inputVisible }"
           @keydown.enter="selectInput"
-          v-model="title"
+          v-model="list.name"
         />
       </div>
       <div>
@@ -86,12 +76,7 @@ export default {
         </svg>
       </div>
     </div>
-    <the-card
-      v-for="cards in list.card"
-      :card="cards"
-      :key="cards.id"
-      @delete-card="removeCard"
-    ></the-card>
+    <the-card v-for="card in list.cards" :card="card" :key="card.id"></the-card>
     <add-card @click="addNewCard"></add-card>
   </div>
 </template>

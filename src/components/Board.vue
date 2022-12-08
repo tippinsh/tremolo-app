@@ -51,7 +51,6 @@ export default {
         const data = response.data;
         this.lists = data;
         console.log(data);
-        console.log(this.lists);
       });
     },
   },
@@ -78,11 +77,7 @@ export default {
 
     <div class="board-container">
       <div class="list-container">
-        <the-list
-          v-for="list in lists"
-          :title="list.name"
-          :key="list.id"
-        ></the-list>
+        <the-list v-for="list in lists" :list="list" :key="list.id"></the-list>
         <add-list @click="addNewList"></add-list>
       </div>
     </div>
