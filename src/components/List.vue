@@ -25,10 +25,14 @@ export default {
       this.titleVisible = !this.titleVisible;
     },
     addNewCard() {
-      this.cardItems.push({
-        id: this.nextCardId++,
-        message: this.newMessage,
-      });
+      axios
+        .post(`${this.baseURL}/cards`, {
+          content: "New Card",
+          list_id: this.list.id,
+        })
+        .then((response) => {
+          this.list.cards.push(response.data);
+        });
     },
     removeCard(cardID) {
       const identifiedCard = this.cardItems.findIndex(

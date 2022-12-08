@@ -19,7 +19,6 @@ export default {
     return {
       baseURL: "http://localhost/api",
       lists: [],
-      nextListId: 2,
       newListTitle: "",
       boardTitle: "Board title",
       inputVisible: false,
@@ -31,9 +30,13 @@ export default {
   },
   methods: {
     addNewList() {
-      axios.post(`${this.baseURL}/todolists`, {
-        name: "New List",
-      });
+      axios
+        .post(`${this.baseURL}/todolists`, {
+          name: "New List",
+        })
+        .then((response) => {
+          this.lists.push(response.data);
+        });
     },
     selectInput() {
       this.inputVisible = !this.inputVisible;
