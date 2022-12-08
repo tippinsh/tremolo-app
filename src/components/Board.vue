@@ -31,9 +31,8 @@ export default {
   },
   methods: {
     addNewList() {
-      this.listItems.push({
-        id: this.nextListId++,
-        title: this.newListTitle,
+      axios.post(`${this.baseURL}/todolists`, {
+        name: "New List",
       });
     },
     selectInput() {
