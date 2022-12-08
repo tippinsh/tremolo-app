@@ -52,7 +52,6 @@ export default {
       axios.get(`${this.baseURL}/todolists`).then((response) => {
         const data = response.data;
         this.lists = data;
-        console.log(data);
       });
     },
   },

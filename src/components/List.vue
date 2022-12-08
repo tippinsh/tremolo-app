@@ -2,6 +2,7 @@
 import Card from "./Card.vue";
 import AddCard from "./AddCard.vue";
 import axios from "axios";
+import { remove } from "@vue/shared";
 
 export default {
   components: {
@@ -13,10 +14,10 @@ export default {
   },
   data() {
     return {
+      baseURL: "http://localhost/api",
       inputVisible: false,
       titleVisible: false,
       baseURL: "http://localhost/api",
-      newMessage: "",
     };
   },
   methods: {
@@ -34,11 +35,8 @@ export default {
           this.list.cards.push(response.data);
         });
     },
-    removeCard(cardID) {
-      const identifiedCard = this.cardItems.findIndex(
-        (cards) => cards.id === cardID
-      );
-      this.cardItems.splice(identifiedCard, 1);
+    removeCard(cardId) {
+      axios.delete(`${this.baseURL}/cards/${cardId}`);
     },
   },
 };
@@ -80,7 +78,12 @@ export default {
         </svg>
       </div>
     </div>
-    <the-card v-for="card in list.cards" :card="card" :key="card.id"></the-card>
+    <the-card
+      v-for="card in list.cards"
+      :card="card"
+      :key="card.id"
+      @click="removeCard(card.id)"
+    ></the-card>
     <add-card @click="addNewCard"></add-card>
   </div>
 </template>
