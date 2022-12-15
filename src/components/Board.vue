@@ -142,15 +142,15 @@ body {
 }
 
 .board-title {
-  font-size: 22px;
+  font-size: 30px;
   color: #e26d5c;
   padding-left: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   width: 256px;
   height: 25px;
   cursor: pointer;
   background-color: inherit;
-  font-family: "Rubik", sans-serif;
+  font-family: "Abril Fatface", cursive;
 }
 
 .disable {
@@ -159,15 +159,15 @@ body {
 
 .title {
   display: inline;
-  padding: 5px;
-  margin: 10px 10px 15px 25px;
+  padding: 8px;
+  margin: 25px 10px 15px 25px;
   border-radius: 3px;
   border: none;
-  font-size: 22px;
+  font-size: 30px;
   height: 20px;
   color: #e26d5c;
   box-shadow: none;
-  font-family: "Rubik", sans-serif;
+  font-family: "Abril Fatface", cursive;
 }
 
 input:focus {
