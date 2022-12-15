@@ -76,22 +76,9 @@ export default {
         />
       </div>
       <div>
-        <button @click="deleteList">X</button>
-        <!-- <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="menu-btn"
-          @click="removeList()"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-          />
-        </svg> -->
+        <button @click="deleteList" class="icon">
+          <i class="fa-regular fa-trash-can"></i>
+        </button>
       </div>
     </div>
     <the-card
@@ -116,6 +103,12 @@ export default {
   flex-direction: column;
 }
 
+.icon {
+  cursor: pointer;
+  border: none;
+  background: inherit;
+}
+
 .title-contents {
   display: flex;
   justify-content: space-between;
@@ -127,7 +120,7 @@ export default {
   margin-left: 6px;
   margin-bottom: 3px;
   border-radius: 3px;
-  box-shadow: 1px 3px 3px rgb(0 0 0 / 0.4);
+  box-shadow: 1px 3px 3px rgb(0 0 0 / 0.2);
 }
 
 .menu-btn {
@@ -156,12 +149,10 @@ export default {
 .active {
   display: inline;
   padding: 5px;
-  border: none;
   font-size: 18px;
   height: 20px;
-  box-shadow: none;
   border-radius: 5px;
-  width: 150px;
+  width: 100%;
   margin: 3px;
 }
 </style>
