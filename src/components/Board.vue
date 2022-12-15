@@ -54,6 +54,21 @@ export default {
         this.lists = data;
       });
     },
+    removeList(listID) {
+      axios
+        .delete(`${this.baseURL}/todolists/${listID}`)
+        .then((response) => {
+          for (let i = 0; i < this.lists.values.length; i++) {
+            if (this.lists.value[i].id == listID) {
+              this.lists.values.splice(i, 1);
+              break;
+            }
+          }
+        })
+        .catch((err) => {
+          alert("Error deleting lists");
+        });
+    },
   },
 };
 </script>
@@ -78,7 +93,12 @@ export default {
 
     <div class="board-container">
       <div class="list-container">
-        <the-list v-for="list in lists" :list="list" :key="list.id"></the-list>
+        <the-list
+          v-for="list in lists"
+          :list="list"
+          :key="list.id"
+          @delete-list="removeList(list.id)"
+        ></the-list>
         <add-list @click="addNewList"></add-list>
       </div>
     </div>

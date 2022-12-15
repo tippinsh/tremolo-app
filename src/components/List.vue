@@ -17,7 +17,6 @@ export default {
       baseURL: "http://localhost/api",
       inputVisible: false,
       titleVisible: false,
-      baseURL: "http://localhost/api",
     };
   },
   methods: {
@@ -35,8 +34,23 @@ export default {
           this.list.cards.push(response.data);
         });
     },
+    deleteList() {
+      this.$emit("delete-list", this.id);
+    },
     removeCard(cardId) {
-      axios.delete(`${this.baseURL}/cards/${cardId}`);
+      axios
+        .delete(`${this.baseURL}/cards/${cardId}`)
+        .then((response) => {
+          for (let i = 0; i < this.list.cards.values.length; i++) {
+            if (this.list.cards.values[i].id == cardId) {
+              this.list.cards.values.splice(i, 1);
+              break;
+            }
+          }
+        })
+        .catch((err) => {
+          alert("Error deleting cards");
+        });
     },
   },
 };
@@ -62,27 +76,29 @@ export default {
         />
       </div>
       <div>
-        <svg
+        <button @click="deleteList">X</button>
+        <!-- <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
           class="menu-btn"
+          @click="removeList()"
         >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
           />
-        </svg>
+        </svg> -->
       </div>
     </div>
     <the-card
       v-for="card in list.cards"
       :card="card"
       :key="card.id"
-      @click="removeCard(card.id)"
+      @delete-card="removeCard(card.id)"
     ></the-card>
     <add-card @click="addNewCard"></add-card>
   </div>
