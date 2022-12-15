@@ -95,13 +95,9 @@ export default {
   color: #6b778c;
 }
 
-/* .btn:hover {
-  background-color: rgba(214, 214, 214, 0.8);
-} */
-
 .card-content {
   width: 252px;
-  height: 90px;
+  height: 82px;
   font-size: 16px;
   margin: 0;
 }

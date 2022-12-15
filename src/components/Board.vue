@@ -164,7 +164,7 @@ body {
   border-radius: 3px;
   border: none;
   font-size: 30px;
-  height: 20px;
+  height: 25px;
   color: #e26d5c;
   box-shadow: none;
   font-family: "Abril Fatface", cursive;
