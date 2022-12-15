@@ -41,9 +41,9 @@ export default {
       axios
         .delete(`${this.baseURL}/cards/${cardId}`)
         .then((response) => {
-          for (let i = 0; i < this.list.cards.values.length; i++) {
-            if (this.list.cards.values[i].id == cardId) {
-              this.list.cards.values.splice(i, 1);
+          for (let i = 0; i < this.list.cards.length; i++) {
+            if (this.list.cards[i].id == cardId) {
+              this.list.cards.splice(i, 1);
               break;
             }
           }

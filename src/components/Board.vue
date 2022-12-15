@@ -19,7 +19,6 @@ export default {
     return {
       baseURL: "http://localhost/api",
       lists: [],
-      newListTitle: "",
       boardTitle: "Board title",
       inputVisible: false,
       titleVisible: false,
@@ -55,19 +54,10 @@ export default {
       });
     },
     removeList(listID) {
-      axios
-        .delete(`${this.baseURL}/todolists/${listID}`)
-        .then((response) => {
-          for (let i = 0; i < this.lists.values.length; i++) {
-            if (this.lists.value[i].id == listID) {
-              this.lists.values.splice(i, 1);
-              break;
-            }
-          }
-        })
-        .catch((err) => {
-          alert("Error deleting lists");
-        });
+      axios.delete(`${this.baseURL}/todolists/${listID}`).then((response) => {
+        let index = this.lists.indexOf(listID);
+        this.lists.splice(index, 1);
+      });
     },
   },
 };
