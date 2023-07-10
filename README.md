@@ -1,5 +1,8 @@
 # trello-app
+Project management app inspired by Trello
+Old bootcamp project
 
+# Setup
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
